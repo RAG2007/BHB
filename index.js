@@ -12,34 +12,36 @@ for(let i = 0; i < 4; i++) {
 let state = 0;
 let startclick;
 let b;
-
-document.getElementById("ReactionTimeTestPage").addEventListener("click", (event)=> {
+const element = document.getElementById("ReactionTimeTestPage");
+element.addEventListener("mousedown", (event)=> {
+	const ReactionTime = event.timeStamp - startclick;
 	if(state === 2) {
-		document.getElementById("ReactionTimeTestPage").innerHTML = `Your reaction time is ${event.timeStamp - startclick}`;
-		document.getElementById("ReactionTimeTestPage").style.backgroundColor = "#010409";
+		element.style.backgroundColor = "#010409";
+		element.innerHTML = `Your reaction time is ${ReactionTime}`;
 		state++;
 	
 	} else if(state === 1) {
 		clearTimeout(b);
 		state = 0;
-		document.getElementById("ReactionTimeTestPage").style.backgroundColor = "#ce2636";
-		document.getElementById("ReactionTimeTestPage").innerHTML = "Too Fast";
+		element.style.backgroundColor = "#ce2636";
+		element.innerHTML = "Too Fast";
 	} else if(state === 0) {
 		state++;
-		document.getElementById("ReactionTimeTestPage").style.backgroundColor = "#ce2636";
-		document.getElementById("ReactionTimeTestPage").innerHTML = `Click as fast as you can when you see green`;
-		const a = (Math.random() * 2 + 1) * 1000;
+		element.style.backgroundColor = "#ce2636";
+		element.innerHTML = `Click as fast as you can when you see white`;
+		let a = (Math.random() * 2 + 1) * 1000;
 		b = setTimeout(()=> {
+			element.style.backgroundColor = "#ffffff";
 			state++;
-			document.getElementById("ReactionTimeTestPage").innerHTML = ``;
-			document.getElementById("ReactionTimeTestPage").style.backgroundColor = "#4bdb6a";
+			element.innerHTML = ``;
 			setTimeout(()=> {
+				element.offsetWidth;
 				startclick = performance.now();
 			});
 		}, a);
 	} else if(state === 3) {
 		state = 0;
-		document.getElementById("ReactionTimeTestPage").style.backgroundColor = "#010409";
-		document.getElementById("ReactionTimeTestPage").innerHTML = `Click anywhere to start`;
+		element.style.backgroundColor = "#010409";
+		element.innerHTML = `Click anywhere to start`;
 	}
 });

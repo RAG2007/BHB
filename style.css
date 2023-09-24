@@ -62,6 +62,8 @@ body {
 	align-items: center;
 	font-size: 24px;
 	cursor: pointer;
+	user-select: none;
+	transition: none;
 }
 
 #Header-holder {
