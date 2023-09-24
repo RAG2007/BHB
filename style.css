@@ -1,0 +1,111 @@
+:root {
+	--HeaderHeight: 48px;
+	--HeaderColor: #010409;
+	--DefaultButtonHoverColor: #8d9399;
+	--PageColor: #010409;
+	--DefaultFontColor: #c9d1d9;
+	--DefaultBorderColor: #30363d;
+	--DefaultTransitionTime: 0.1s;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+#PageHolder {
+	display: flex;
+	width: 100vw;
+	height: 100vh;
+	flex-direction: column;
+	color: var(--DefaultFontColor);
+}
+
+#MainPageHolder {
+	display: none;
+	flex-direction: column;
+	flex-grow: 1;
+	background-color: var(--PageColor);
+	align-items: center;
+}
+
+#MainPageSpacer {
+	height: 128px;
+	width: 100vw;
+}
+
+#MainPageText {
+	display: flex;
+	width: 720px;
+	border-left: 1px solid var(--DefaultBorderColor);
+	padding-left: 50px;
+	padding-right: 50px;
+	text-align: justify;
+	align-items: center;
+	font-style: italic;
+	flex-direction: column;
+}
+
+#ReactionTimePageHolder {
+	display: none;
+	flex-direction: column;
+	flex-grow: 1;
+	background-color: var(--PageColor);
+}
+
+#ReactionTimeTestPage {
+	display: flex;
+	background-color: var(--PageColor);
+	flex-grow: 1;
+	color: var(--DefaultFontColor);
+	justify-content: center;
+	align-items: center;
+	font-size: 24px;
+	cursor: pointer;
+}
+
+#Header-holder {
+	position: sticky;
+	top: 0;
+	display: flex;
+	width: 100vw;
+	height: var(--HeaderHeight);
+	background-color: var(--HeaderColor);
+	align-items: center;
+	border-bottom: 1px solid var(--DefaultBorderColor);
+	flex-direction: row;
+}
+
+#Logo {
+	display: flex;
+	padding: 4px;
+	margin-left: 16px;
+	color: #58a6ff;
+}
+
+#Logo:hover {
+	color: #2d6cb4;
+	cursor: pointer;
+}
+
+.HeaderButton {
+	display: flex;
+	padding: 4px;
+	margin-right: 16px;
+	margin-left: 16px;
+	transition: var(--DefaultTransitionTime);
+}
+
+.HeaderButton:hover {
+	color: var(--DefaultButtonHoverColor);
+	cursor: pointer;
+}
+
+.HeaderSpacer {
+	width: 256px;
+	height: var(--HeaderHeight);
+}
+
+.open {
+	display: flex !important;
+}
