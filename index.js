@@ -29,7 +29,7 @@ element.addEventListener("mousedown", (event)=> {
 		state++;
 		element.style.backgroundColor = "#ce2636";
 		element.innerHTML = `Click as fast as you can when you see white`;
-		let a = (Math.random() * 2 + 1) * 1000;
+		let a = (Math.random() * 3 + 1) * 1000;
 		b = setTimeout(()=> {
 			element.style.backgroundColor = "#ffffff";
 			state++;
