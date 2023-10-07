@@ -91,7 +91,7 @@ document.getElementById("WritingTestPageHolder").addEventListener("keydown", (ev
 			}
 			if(index === easy.length - 1) {
 				const yourtime = Date.now() - firstTime;
-				document.getElementById("WritingTestResults").innerHTML = `Your typing speed is ${(a.length / (yourtime  / 1000) * 60).toFixed(2)} WPM with an accuracy of ${(easy.length) / (easy.length + nacc) * 100}%`;
+				document.getElementById("WritingTestResults").innerHTML = `Your typing speed is ${(a.length / (yourtime  / 1000) * 60).toFixed(2)} WPM with an accuracy of ${((easy.length) / (easy.length + nacc) * 100).toFixed(2)}%`;
 				document.getElementById("WritingTestResults").style.display = "block";
 				document.getElementById("WritingTestPage").style.display = "none";
 				index = 0;
