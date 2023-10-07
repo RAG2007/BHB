@@ -137,8 +137,10 @@ body {
 	flex-grow: 1;
 	justify-content: center;
 	align-items: center;
+	user-select: none;
 }
 #WritingTestPage {
+	display: flex;
 	margin: 100px;
 	overflow: hidden;
 	word-wrap: break-word;

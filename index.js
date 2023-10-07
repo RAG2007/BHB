@@ -81,6 +81,8 @@ document.getElementById("WritingTestPageHolder").addEventListener("keydown", (ev
 	document.getElementById("WritingTestPage").style.display = "block";
 	event.preventDefault();
 	if(done === 0) {
+		window.getSelection().getRangeAt(0).setStart(document.getElementById(`letter0`), 0);
+		window.getSelection().getRangeAt(0).setEnd(document.getElementById(`letter0`), 0);
 		if (event.key === easy[index] ) {
 			if(first === 0) {
 				firstTime = Date.now();
@@ -89,7 +91,7 @@ document.getElementById("WritingTestPageHolder").addEventListener("keydown", (ev
 			}
 			if(index === easy.length - 1) {
 				const yourtime = Date.now() - firstTime;
-				document.getElementById("WritingTestResults").innerHTML = `Your typing speed is ${(a.length / (yourtime  / 1000) * 60).toFixed(2)} WPM with an accuracy of ${(easy.length - nacc) / easy.length * 100}%`;
+				document.getElementById("WritingTestResults").innerHTML = `Your typing speed is ${(a.length / (yourtime  / 1000) * 60).toFixed(2)} WPM with an accuracy of ${(easy.length) / (easy.length + nacc) * 100}%`;
 				document.getElementById("WritingTestResults").style.display = "block";
 				document.getElementById("WritingTestPage").style.display = "none";
 				index = 0;
