@@ -89,6 +89,13 @@ body {
 	color: #2d6cb4;
 	cursor: pointer;
 }
+.WritingTestDone {
+	color: white;
+}
+
+.WritingTestLeft {
+	color: #8d9399;
+}
 
 .HeaderButton {
 	display: flex;
@@ -110,4 +117,29 @@ body {
 
 .open {
 	display: flex !important;
+}
+.letter {
+	font-size: 24px;
+	user-select: none;
+	color: #8d9399;
+}
+.word {
+	margin-left: 3px;
+	margin-right: 3px
+}
+.letterdone {
+	color: #ffffff !important;
+}
+
+#WritingTestPageHolder {
+	background-color: var(--PageColor);
+	display: none;
+	flex-grow: 1;
+	justify-content: center;
+	align-items: center;
+}
+#WritingTestPage {
+	margin: 100px;
+	overflow: hidden;
+	word-wrap: break-word;
 }
