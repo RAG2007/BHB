@@ -45,7 +45,7 @@ element.addEventListener("mousedown", (event)=> {
 		element.innerHTML = `Click anywhere to start`;
 	}
 });
-const easy = "Lorem";
+const easy = "o validate the statements and conclusions in your work by providing directions to other sound sources that support and verify them.";
 let a = easy.split(' ');
 let all = 0;
 for(let i = 0; i < a.length; i++) {
@@ -81,10 +81,10 @@ document.getElementById("WritingTestPageHolder").addEventListener("keydown", (ev
 	document.getElementById("WritingTestPage").style.display = "block";
 	event.preventDefault();
 	if(done === 0) {
-		window.getSelection().getRangeAt(0).setStart(document.getElementById(`letter0`), 0);
-		window.getSelection().getRangeAt(0).setEnd(document.getElementById(`letter0`), 0);
 		if (event.key === easy[index] ) {
 			if(first === 0) {
+				window.getSelection().getRangeAt(0).setStart(document.getElementById(`letter0`), 0);
+				window.getSelection().getRangeAt(0).setEnd(document.getElementById(`letter0`), 0);
 				firstTime = Date.now();
 				first = 1;
 				done = 0;
